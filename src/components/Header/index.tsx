@@ -11,6 +11,11 @@ export const Header = () => {
       variant: {
         header: {
           padding: "$3 $9",
+          position: "fixed",
+          top: 0,
+          right: 0,
+          left: 0,
+          zIndex: 100,
         },
         logo: {
           fontFamily: `Open Sans, sans-serif, Roboto Condensed, sans-serif`,

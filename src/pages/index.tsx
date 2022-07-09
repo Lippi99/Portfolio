@@ -6,6 +6,8 @@ import { Section } from "../components/Section";
 import { css, keyframes } from "../stitches.config";
 import { Flex } from "../components/Flex";
 import i18next from "i18next";
+import { BsFillArrowDownCircleFill } from "react-icons/bs";
+import me from "../assets/me.jpg";
 
 export const Home = () => {
   const reactRotate = keyframes({
@@ -47,6 +49,18 @@ export const Home = () => {
           animation: `${typeWrite} 1000ms steps(30,end) 1700ms 1 normal both`,
           fontWeight: "bolder",
         },
+        aboutTitle: {
+          fontSize: "2rem",
+          color: "$purple200",
+          fontFamily: `Roboto, sans-serif`,
+          fontWeight: 900,
+        },
+        aboutDescription: {
+          fontSize: "1.1rem",
+          textAlign: "justify",
+          color: "$white200",
+          fontFamily: `Inconsolata, monospace, Open Sans, sans-serif`,
+        },
       },
     },
   });
@@ -54,9 +68,8 @@ export const Home = () => {
   return (
     <Box
       css={{
+        padding: "0 $3",
         background: "$backgroundLightMode",
-        width: "100vw",
-        minHeight: "100vh",
       }}
     >
       <Header />
@@ -66,8 +79,9 @@ export const Home = () => {
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          padding: "$4 $4",
           overflow: "hidden",
+          position: "relative",
+          marginBottom: "$9",
 
           "@bp3": {
             flexDirection: "column-reverse",
@@ -113,6 +127,90 @@ export const Home = () => {
                 alt="pc"
               />
             </Box>
+          </Box>
+        </Flex>
+        <Box
+          css={{
+            textAlign: "center",
+            position: "absolute",
+            right: 0,
+            left: 0,
+            bottom: 0,
+          }}
+        >
+          <BsFillArrowDownCircleFill
+            cursor="pointer"
+            color="white"
+            fontSize={30}
+          />
+        </Box>
+      </Section>
+
+      <Section>
+        <Flex
+          css={{
+            padding: "0 $6",
+            "@bp3": {
+              flexDirection: "column-reverse",
+              alignItems: "center",
+              justifyContent: "center",
+              textAlign: "center",
+            },
+          }}
+          align="center"
+          justify="between"
+        >
+          <Box css={{ width: "50%" }}>
+            <h2
+              className={text({
+                variant: "aboutTitle",
+              })}
+            >
+              {i18next.t<string>("aboutMe")}
+            </h2>
+            <p
+              className={text({
+                variant: "aboutDescription",
+              })}
+            >
+              {i18next.t<string>("aboutMeFirst")}
+            </p>
+
+            <p
+              className={text({
+                variant: "aboutDescription",
+              })}
+            >
+              {i18next.t<string>("aboutMeSecond")}
+            </p>
+
+            <p
+              className={text({
+                variant: "aboutDescription",
+              })}
+            >
+              {i18next.t<string>("aboutMeThird")}
+            </p>
+          </Box>
+          <Box
+            css={{
+              width: "50%",
+              textAlign: "center",
+              height: "400px",
+              overflow: "hidden",
+            }}
+          >
+            <img
+              style={{
+                width: "400px",
+                height: "100%",
+                objectFit: "cover",
+                borderRadius: "50%",
+                border: "5px solid rgb(139 233 253)",
+              }}
+              alt="me"
+              src={me}
+            />
           </Box>
         </Flex>
       </Section>
