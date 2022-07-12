@@ -3,11 +3,20 @@ import { Header } from "../components/Header";
 import reactLogo from "../assets/react.svg";
 import look from "../assets/look.svg";
 import { Section } from "../components/Section";
-import { css, keyframes } from "../stitches.config";
+import { css, keyframes, styled } from "../stitches.config";
 import { Flex } from "../components/Flex";
 import i18next from "i18next";
 import { BsFillArrowDownCircleFill } from "react-icons/bs";
+import { RiErrorWarningFill } from "react-icons/ri";
 import me from "../assets/me.jpg";
+import { Grid } from "../components/Grid";
+import { Card } from "../components/Card";
+
+import cryptoimg from "../assets/crypto.jpg";
+import spaceimg from "../assets/space.jpg";
+import ecommerceimg from "../assets/ecommerce.jpg";
+import memorygameimg from "../assets/memorygame.jpg";
+import tictactoeimg from "../assets/tictactoe.jpg";
 
 export const Home = () => {
   const reactRotate = keyframes({
@@ -61,9 +70,34 @@ export const Home = () => {
           color: "$white200",
           fontFamily: `Inconsolata, monospace, Open Sans, sans-serif`,
         },
+        footer: {
+          fontSize: "1.1rem",
+          textAlign: "center",
+          padding: "$5 0",
+          color: "$purple200",
+          fontFamily: `Inconsolata, monospace, Open Sans, sans-serif`,
+        },
       },
     },
   });
+
+  const Download = styled("button", {
+    fontSize: "17px",
+    padding: "$1",
+    marginLeft: "$2",
+    borderRadius: "10px",
+    border: "0",
+    background: "$white200",
+    color: "$blue200",
+  });
+
+  const Projects = styled("h2", {
+    fontSize: "30px",
+    color: "$blue200",
+    marginBottom: "$7",
+  });
+
+  const currentYear = new Date().getFullYear();
 
   return (
     <Box
@@ -191,6 +225,18 @@ export const Home = () => {
             >
               {i18next.t<string>("aboutMeThird")}
             </p>
+            <p
+              className={text({
+                variant: "aboutDescription",
+              })}
+            >
+              {i18next.t<string>("downloadResume")}
+              <Download>
+                <a href={require("../curriculum.pdf")} download="resume">
+                  Download
+                </a>
+              </Download>
+            </p>
           </Box>
           <Box
             css={{
@@ -214,6 +260,95 @@ export const Home = () => {
           </Box>
         </Flex>
       </Section>
+
+      <Section>
+        <Box css={{ textAlign: "center" }}>
+          <Projects>{i18next.t<string>("projects")}</Projects>
+        </Box>
+        <Grid
+          columns={3}
+          gap={8}
+          css={{
+            padding: "0 $6",
+            "@bp3": {
+              gridTemplateColumns: "repeat(2, 1fr)",
+            },
+            "@bp2": {
+              gridTemplateColumns: "1fr",
+            },
+          }}
+        >
+          <a
+            target="_blank"
+            href="https://github.com/SolomonDeveloper/crypto"
+            rel="noreferrer"
+          >
+            <Card background={cryptoimg} />
+          </a>
+          <a
+            target="_blank"
+            href="https://github.com/SolomonDeveloper/Space"
+            rel="noreferrer"
+          >
+            <Card background={spaceimg} />
+          </a>
+          <a
+            href="/"
+            style={{
+              background: "rgba(0, 0, 0, 0.5)",
+              position: "relative",
+              pointerEvents: "none",
+            }}
+          >
+            <Box css={{ opacity: 0.2 }}>
+              <Card background={ecommerceimg} />
+            </Box>
+            <Box
+              css={{
+                position: "absolute",
+                left: "50%",
+                top: "50%",
+                transform: "translate(-50%, -50%)",
+              }}
+            >
+              <Flex direction="column" align="center">
+                <h2
+                  style={{
+                    fontSize: "40px",
+                    color: "white",
+                    fontFamily: `Inconsolata, monospace, Open Sans, sans-serif`,
+                    margin: 0,
+                  }}
+                >
+                  {i18next.t<string>("soon")}
+                </h2>
+                <RiErrorWarningFill color="#ffcc00" fontSize={40} />
+              </Flex>
+            </Box>
+          </a>
+          <a
+            target="_blank"
+            href="https://github.com/SolomonDeveloper/Jogo-da-Memoria-ReactJS"
+            rel="noreferrer"
+          >
+            <Card background={memorygameimg} />
+          </a>
+          <a
+            target="_blank"
+            href="https://github.com/SolomonDeveloper/JogoDaVelha"
+            rel="noreferrer"
+          >
+            <Card background={tictactoeimg} />
+          </a>
+        </Grid>
+      </Section>
+      <footer>
+        <Box>
+          <h2 className={text({ variant: "footer" })}>
+            {i18next.t<string>("fullName")} © {currentYear}
+          </h2>
+        </Box>
+      </footer>
     </Box>
   );
 };

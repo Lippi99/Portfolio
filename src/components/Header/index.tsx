@@ -38,8 +38,6 @@ export const Header = () => {
     localStorage.setItem("lang", key);
     window.location.reload();
   };
-  // saves the value
-  // const lang = localStorage.getItem("lang") || "en";
 
   const menu = (
     <Menu onClick={handleLanguage}>
@@ -47,6 +45,8 @@ export const Header = () => {
       <Menu.Item key="pt">Portuguese</Menu.Item>
     </Menu>
   );
+
+  const logo = "<Solomon.dev  />";
 
   return (
     <Box as="header" className={header({ variant: "header" })}>
@@ -57,7 +57,7 @@ export const Header = () => {
           justify="between"
           align="center"
         >
-          <h1 className={header({ variant: "logo" })}>Solomon.dev</h1>
+          <h1 className={header({ variant: "logo" })}> {logo}</h1>
           <Flex align="center">
             <li className={header({ variant: "item" })}>
               {i18next.t<string>("about")}

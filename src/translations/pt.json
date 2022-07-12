@@ -5,5 +5,9 @@
   "name": "Olá, meu nome é Felipe e eu sou",
   "aboutMeFirst": "Meu nome é Felipe, atuo na área de tecnologia desde 2020. Fiz estágio com automatização de testes unitários, suporte e infraestrutura. Porém, ainda naquele ano, eu havia iniciado meus estudos em desenvolvimento web, com foco em desenvolvimento de Interface (Front-End).",
   "aboutMeSecond": "Em 2021, consegui a oportunidade de trabalho na NOCLAF TECH como desenvolvedor Front-End. Porém, meus serviços são terceirizados para a empresa Navegg, onde realizo manutenções e novas atualizações em seus sistemas internos.",
-  "aboutMeThird": "Trabalho com ReactJS, NextJS, TypeScript e algumas bibliotecas de UI (User Interface) como Ant Design, Styled-Components e StitchesJS."
+  "aboutMeThird": "Trabalho com ReactJS, NextJS, TypeScript e algumas bibliotecas de UI (User Interface) como Ant Design, Styled-Components e StitchesJS.",
+  "downloadResume": "Você pode ver meu currículo aqui:",
+  "projects": "Projetos",
+  "soon": "Em breve",
+  "fullName": "Felipe Lippi"
 }
