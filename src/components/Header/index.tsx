@@ -4,6 +4,7 @@ import { Flex } from "../Flex";
 import i18next from "i18next";
 import { Dropdown, Menu } from "antd";
 import { HiTranslate } from "react-icons/hi";
+import { Burger } from "../Burguer";
 
 export const Header = () => {
   const header = css({
@@ -20,9 +21,11 @@ export const Header = () => {
         logo: {
           fontFamily: `Open Sans, sans-serif, Roboto Condensed, sans-serif`,
           color: "$purple200",
+          marginBottom: 0,
         },
         list: {
           listStyleType: "none",
+          "@bp2": { display: "none" },
         },
         item: {
           fontSize: "$5",
@@ -50,6 +53,7 @@ export const Header = () => {
 
   return (
     <Box as="header" className={header({ variant: "header" })}>
+      <Burger />
       <nav>
         <Flex
           className={header({ variant: "list" })}
@@ -59,12 +63,16 @@ export const Header = () => {
         >
           <h1 className={header({ variant: "logo" })}> {logo}</h1>
           <Flex align="center">
-            <li className={header({ variant: "item" })}>
-              {i18next.t<string>("about")}
-            </li>
-            <li className={header({ variant: "item" })}>
-              {i18next.t<string>("portfolio")}
-            </li>
+            <a href="#about">
+              <li className={header({ variant: "item" })}>
+                {i18next.t<string>("about")}
+              </li>
+            </a>
+            <a href="#projects">
+              <li className={header({ variant: "item" })}>
+                {i18next.t<string>("portfolio")}
+              </li>
+            </a>
 
             <Dropdown overlay={menu}>
               <HiTranslate fontSize={20} color="rgb(139, 233, 253)" />

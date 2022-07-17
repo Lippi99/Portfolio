@@ -6,7 +6,6 @@ import { Section } from "../components/Section";
 import { css, keyframes, styled } from "../stitches.config";
 import { Flex } from "../components/Flex";
 import i18next from "i18next";
-import { BsFillArrowDownCircleFill } from "react-icons/bs";
 import { RiErrorWarningFill } from "react-icons/ri";
 import me from "../assets/me.jpg";
 import { Grid } from "../components/Grid";
@@ -18,6 +17,8 @@ import ecommerceimg from "../assets/ecommerce.jpg";
 import memorygameimg from "../assets/memorygame.jpg";
 import tictactoeimg from "../assets/tictactoe.jpg";
 import fullStackimg from "../assets/fullStack.jpg";
+
+import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
 
 export const Home = () => {
   const reactRotate = keyframes({
@@ -49,6 +50,9 @@ export const Home = () => {
           animation: `${typeWrite} 1000ms steps(30,end) 500ms 1 normal both`,
           whiteSpace: "nowrap",
           overflow: "hidden",
+          "@bp2": {
+            fontSize: "1.4rem",
+          },
         },
         span: {
           fontSize: "2rem",
@@ -58,6 +62,9 @@ export const Home = () => {
           fontFamily: `Open Sans, sans-serif, Roboto Condensed, sans-serif`,
           animation: `${typeWrite} 1000ms steps(30,end) 1700ms 1 normal both`,
           fontWeight: "bolder",
+          "@bp2": {
+            fontSize: "1.4rem",
+          },
         },
         aboutTitle: {
           fontSize: "2rem",
@@ -135,13 +142,56 @@ export const Home = () => {
             {i18next.t<string>("name")}
           </h2>
           <h2 className={text({ variant: "span" })}>Front-End developer.</h2>
+
+          <Flex
+            justify="between"
+            css={{
+              width: "50%",
+              marginTop: "$5",
+              "@bp3": {
+                margin: "$7 auto",
+              },
+            }}
+          >
+            <a
+              target="_blank"
+              href="https://github.com/SolomonDeveloper"
+              rel="noreferrer"
+            >
+              <FaGithub fontSize={50} color="rgb(139, 233, 253)" />
+            </a>
+            <a
+              target="_blank"
+              href="https://www.facebook.com/felipe.lippi.9/"
+              rel="noreferrer"
+            >
+              <FaFacebook fontSize={50} color="rgb(139, 233, 253)" />
+            </a>
+            <a
+              target="_blank"
+              href="https://www.linkedin.com/in/felipe-lippi-61b159199/"
+              rel="noreferrer"
+            >
+              <FaLinkedin fontSize={50} color="rgb(139, 233, 253)" />
+            </a>
+          </Flex>
         </Box>
         <Flex align="center">
-          <Box css={{ position: "relative" }}>
+          <Box
+            css={{
+              position: "relative",
+              width: "700px",
+              height: "600px",
+              "@bp2": {
+                width: "90%",
+                margin: "0 auto",
+              },
+            }}
+          >
             <img
               style={{ objectFit: "contain" }}
-              width="700px"
-              height="600px"
+              width="100%"
+              height="100%"
               src={look}
               alt="look"
             />
@@ -149,39 +199,38 @@ export const Home = () => {
               css={{
                 position: "absolute",
                 left: "50%",
-                top: "54%",
+                top: "55.3%",
                 transform: "translateX(-50%, -50%)",
+                width: "120px",
+                height: "120px",
+                "@bp2": {
+                  width: "80px",
+                  height: "80px",
+                  left: "54%",
+                  top: "58%",
+                  transform: "translateX(-50%, -50%)",
+                },
+                "@bp3": {
+                  display: "none",
+                },
               }}
             >
               <img
                 className={reactRotate()}
-                style={{ animation: `${reactRotate} 10000ms infinite linear` }}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  animation: `${reactRotate} 10000ms infinite linear`,
+                }}
                 src={reactLogo}
-                width="120px"
-                height="120px"
                 alt="pc"
               />
             </Box>
           </Box>
         </Flex>
-        <Box
-          css={{
-            textAlign: "center",
-            position: "absolute",
-            right: 0,
-            left: 0,
-            bottom: 0,
-          }}
-        >
-          <BsFillArrowDownCircleFill
-            cursor="pointer"
-            color="white"
-            fontSize={30}
-          />
-        </Box>
       </Section>
 
-      <Section>
+      <Section id="about">
         <Flex
           css={{
             padding: "0 $6",
@@ -195,7 +244,14 @@ export const Home = () => {
           align="center"
           justify="between"
         >
-          <Box css={{ width: "50%" }}>
+          <Box
+            css={{
+              width: "50%",
+              "@bp3": {
+                width: "100%",
+              },
+            }}
+          >
             <h2
               className={text({
                 variant: "aboutTitle",
@@ -243,14 +299,16 @@ export const Home = () => {
             css={{
               width: "50%",
               textAlign: "center",
-              height: "400px",
               overflow: "hidden",
+              position: "relative",
+              "@bp2": {
+                width: "100%",
+              },
             }}
           >
             <img
               style={{
-                width: "400px",
-                height: "100%",
+                width: "60%",
                 objectFit: "cover",
                 borderRadius: "50%",
                 border: "5px solid rgb(139 233 253)",
@@ -262,7 +320,7 @@ export const Home = () => {
         </Flex>
       </Section>
 
-      <Section>
+      <Section id="projects">
         <Box css={{ textAlign: "center" }}>
           <Projects>{i18next.t<string>("projects")}</Projects>
         </Box>
