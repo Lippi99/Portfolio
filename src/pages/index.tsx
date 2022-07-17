@@ -17,6 +17,7 @@ import spaceimg from "../assets/space.jpg";
 import ecommerceimg from "../assets/ecommerce.jpg";
 import memorygameimg from "../assets/memorygame.jpg";
 import tictactoeimg from "../assets/tictactoe.jpg";
+import fullStackimg from "../assets/fullStack.jpg";
 
 export const Home = () => {
   const reactRotate = keyframes({
@@ -339,6 +340,41 @@ export const Home = () => {
             rel="noreferrer"
           >
             <Card background={tictactoeimg} />
+          </a>
+          <a
+            href="/"
+            style={{
+              height: "70%",
+              background: "rgba(0, 0, 0, 0.5)",
+              position: "relative",
+              pointerEvents: "none",
+            }}
+          >
+            <Box css={{ opacity: 0.2, height: "100%" }}>
+              <Card background={fullStackimg} />
+            </Box>
+            <Box
+              css={{
+                position: "absolute",
+                left: "50%",
+                top: "50%",
+                transform: "translate(-50%, -50%)",
+              }}
+            >
+              <Flex direction="column" align="center">
+                <h2
+                  style={{
+                    fontSize: "40px",
+                    color: "white",
+                    fontFamily: `Inconsolata, monospace, Open Sans, sans-serif`,
+                    margin: 0,
+                  }}
+                >
+                  {i18next.t<string>("soon")}
+                </h2>
+                <RiErrorWarningFill color="#ffcc00" fontSize={40} />
+              </Flex>
+            </Box>
           </a>
         </Grid>
       </Section>
