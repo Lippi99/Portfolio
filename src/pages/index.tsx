@@ -233,7 +233,6 @@ export const Home = () => {
       <Section id="about">
         <Flex
           css={{
-            padding: "0 $6",
             "@bp3": {
               flexDirection: "column-reverse",
               alignItems: "center",
@@ -247,6 +246,7 @@ export const Home = () => {
           <Box
             css={{
               width: "50%",
+              margin: "0 auto",
               "@bp3": {
                 width: "100%",
               },
@@ -297,7 +297,6 @@ export const Home = () => {
           </Box>
           <Box
             css={{
-              width: "50%",
               textAlign: "center",
               overflow: "hidden",
               position: "relative",
