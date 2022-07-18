@@ -334,7 +334,7 @@ export const Home = () => {
         <Box css={{ textAlign: "center" }}>
           <Projects>
             {i18next.t<string>("projects") === "projects"
-              ? "Projects:"
+              ? "Projects"
               : i18next.t<string>("projects")}
           </Projects>
         </Box>
