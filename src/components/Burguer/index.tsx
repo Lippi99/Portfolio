@@ -109,12 +109,16 @@ export const Burger = () => {
           </Flex>
 
           <Flex className={header({ variant: "list" })} as="ul">
-            <li className={header({ variant: "item" })}>
-              {i18next.t<string>("about")}
-            </li>
-            <li className={header({ variant: "item" })}>
-              {i18next.t<string>("portfolio")}
-            </li>
+            <a href="#about">
+              <li className={header({ variant: "item" })}>
+                {i18next.t<string>("about")}
+              </li>
+            </a>
+            <a href="#projects">
+              <li className={header({ variant: "item" })}>
+                {i18next.t<string>("portfolio")}
+              </li>
+            </a>
             <Dropdown overlay={menu}>
               <span className={header({ variant: "item" })}>
                 {i18next.t<string>("translation")}

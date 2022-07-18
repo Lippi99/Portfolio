@@ -17,7 +17,6 @@ import ecommerceimg from "../assets/ecommerce.jpg";
 import memorygameimg from "../assets/memorygame.jpg";
 import tictactoeimg from "../assets/tictactoe.jpg";
 import fullStackimg from "../assets/fullStack.jpg";
-
 import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
 
 export const Home = () => {
@@ -139,7 +138,9 @@ export const Home = () => {
               variant: "title",
             })}
           >
-            {i18next.t<string>("name")}
+            {i18next.t<string>("name") === "name"
+              ? "Hello, I'm Phillip and I'm  a"
+              : i18next.t<string>("name")}
           </h2>
           <h2 className={text({ variant: "span" })}>Front-End developer.</h2>
 
@@ -257,14 +258,18 @@ export const Home = () => {
                 variant: "aboutTitle",
               })}
             >
-              {i18next.t<string>("aboutMe")}
+              {i18next.t<string>("aboutMe") === "aboutMe"
+                ? "About me"
+                : i18next.t<string>("aboutMe")}
             </h2>
             <p
               className={text({
                 variant: "aboutDescription",
               })}
             >
-              {i18next.t<string>("aboutMeFirst")}
+              {i18next.t<string>("aboutMeFirst") === "aboutMeFirst"
+                ? "My name is Phillip, I have been working in the technology area since 2020. I did an internship with automation of unit tests, support and infrastructure. Still in that year, I had started my studies in web development, focusing on Interface development (Front-End)."
+                : i18next.t<string>("aboutMeFirst")}
             </p>
 
             <p
@@ -272,7 +277,9 @@ export const Home = () => {
                 variant: "aboutDescription",
               })}
             >
-              {i18next.t<string>("aboutMeSecond")}
+              {i18next.t<string>("aboutMeSecond") === "aboutMeSecond"
+                ? "In 2021, I got the opportunity to work at NOCLAF TECH as a Front-End Developer. However, my services are outsourced to the company Navegg, where I perform maintenance and new updates on their internal systems."
+                : i18next.t<string>("aboutMeSecond")}
             </p>
 
             <p
@@ -280,14 +287,18 @@ export const Home = () => {
                 variant: "aboutDescription",
               })}
             >
-              {i18next.t<string>("aboutMeThird")}
+              {i18next.t<string>("aboutMeThird") === "aboutMeThird"
+                ? "I work with ReactJS, NextJS, TypeScript and some UI (User Interface) libraries like Ant Design, Styled-Components and StitchesJS."
+                : i18next.t<string>("aboutMeThird")}
             </p>
             <p
               className={text({
                 variant: "aboutDescription",
               })}
             >
-              {i18next.t<string>("downloadResume")}
+              {i18next.t<string>("downloadResume") === "downloadResume"
+                ? "You can see my resume here:"
+                : i18next.t<string>("downloadResume")}
               <Download>
                 <a href={require("../curriculum.pdf")} download="resume">
                   Download
@@ -321,7 +332,11 @@ export const Home = () => {
 
       <Section id="projects">
         <Box css={{ textAlign: "center" }}>
-          <Projects>{i18next.t<string>("projects")}</Projects>
+          <Projects>
+            {i18next.t<string>("projects") === "projects"
+              ? "You can see my resume here:"
+              : i18next.t<string>("projects")}
+          </Projects>
         </Box>
         <Grid
           columns={3}
@@ -378,7 +393,9 @@ export const Home = () => {
                     margin: 0,
                   }}
                 >
-                  {i18next.t<string>("soon")}
+                  {i18next.t<string>("soon") === "soon"
+                    ? "Soon"
+                    : i18next.t<string>("soon")}
                 </h2>
                 <RiErrorWarningFill color="#ffcc00" fontSize={40} />
               </Flex>
@@ -427,7 +444,9 @@ export const Home = () => {
                     margin: 0,
                   }}
                 >
-                  {i18next.t<string>("soon")}
+                  {i18next.t<string>("soon") === "soon"
+                    ? "Soon"
+                    : i18next.t<string>("soon")}
                 </h2>
                 <RiErrorWarningFill color="#ffcc00" fontSize={40} />
               </Flex>
@@ -438,7 +457,9 @@ export const Home = () => {
       <footer>
         <Box>
           <h2 className={text({ variant: "footer" })}>
-            {i18next.t<string>("fullName")} © {currentYear}
+            {i18next.t<string>("fullName") === "fullName"
+              ? `Phillip Lippi ©  ${currentYear}`
+              : ` ${i18next.t<string>("fullName")}© ${currentYear}`}
           </h2>
         </Box>
       </footer>
