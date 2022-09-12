@@ -1,0 +1,33 @@
+[
+  {
+    "id": 1,
+    "image": "../assets/crypto.jpg",
+    "href": "https://crypto-eight-alpha.vercel.app/",
+    "alt": "crypto market"
+  },
+  {
+    "id": 2,
+    "image": "../assets/fullStack.jpg",
+    "href": "https://lustrous-frangollo-76d2df.netlify.app/",
+    "alt": "dashboard management"
+  },
+  {
+    "id": 3,
+    "image": "../assets/space.jpg",
+    "href": "https://space-noil6w5fh-solomondeveloper.vercel.app/",
+    "alt": "space application"
+  },
+
+  {
+    "id": 4,
+    "image": "../assets/memorygame.jpg",
+    "href": "https://solomondeveloper.github.io/JogoDaMemoria/",
+    "alt": "memory game"
+  },
+  {
+    "id": 5,
+    "image": "../assets/tictactoe.jpg",
+    "href": "https://solomondeveloper.github.io/JogoDaVelha/",
+    "alt": "tictactoe game"
+  }
+]

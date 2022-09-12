@@ -6,17 +6,11 @@ import { Section } from "../components/Section";
 import { css, keyframes, styled } from "../stitches.config";
 import { Flex } from "../components/Flex";
 import i18next from "i18next";
-import { RiErrorWarningFill } from "react-icons/ri";
 import me from "../assets/me.jpg";
 import { Grid } from "../components/Grid";
 import { Card } from "../components/Card";
 
-import cryptoimg from "../assets/crypto.jpg";
-import spaceimg from "../assets/space.jpg";
-import ecommerceimg from "../assets/ecommerce.jpg";
-import memorygameimg from "../assets/memorygame.jpg";
-import tictactoeimg from "../assets/tictactoe.jpg";
-import fullStackimg from "../assets/fullStack.jpg";
+import projects from "../data.json";
 import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
 
 export const Home = () => {
@@ -351,107 +345,16 @@ export const Home = () => {
             },
           }}
         >
-          <a
-            target="_blank"
-            href="https://github.com/SolomonDeveloper/crypto"
-            rel="noreferrer"
-          >
-            <Card background={cryptoimg} />
-          </a>
-          <a
-            target="_blank"
-            href="https://github.com/SolomonDeveloper/Space"
-            rel="noreferrer"
-          >
-            <Card background={spaceimg} />
-          </a>
-          <a
-            href="/"
-            style={{
-              background: "rgba(0, 0, 0, 0.5)",
-              position: "relative",
-              pointerEvents: "none",
-            }}
-          >
-            <Box css={{ opacity: 0.2 }}>
-              <Card background={ecommerceimg} />
-            </Box>
-            <Box
-              css={{
-                position: "absolute",
-                left: "50%",
-                top: "50%",
-                transform: "translate(-50%, -50%)",
-              }}
+          {projects.map((project) => (
+            <a
+              target="_blank"
+              href={project.href}
+              rel="noreferrer"
+              key={project.id}
             >
-              <Flex direction="column" align="center">
-                <h2
-                  style={{
-                    fontSize: "40px",
-                    color: "white",
-                    fontFamily: `Inconsolata, monospace, Open Sans, sans-serif`,
-                    margin: 0,
-                  }}
-                >
-                  {i18next.t<string>("soon") === "soon"
-                    ? "Soon"
-                    : i18next.t<string>("soon")}
-                </h2>
-                <RiErrorWarningFill color="#ffcc00" fontSize={40} />
-              </Flex>
-            </Box>
-          </a>
-          <a
-            target="_blank"
-            href="https://github.com/SolomonDeveloper/Jogo-da-Memoria-ReactJS"
-            rel="noreferrer"
-          >
-            <Card background={memorygameimg} />
-          </a>
-          <a
-            target="_blank"
-            href="https://github.com/SolomonDeveloper/JogoDaVelha"
-            rel="noreferrer"
-          >
-            <Card background={tictactoeimg} />
-          </a>
-          <a
-            href="/"
-            style={{
-              height: "70%",
-              background: "rgba(0, 0, 0, 0.5)",
-              position: "relative",
-              pointerEvents: "none",
-            }}
-          >
-            <Box css={{ opacity: 0.2, height: "100%" }}>
-              <Card background={fullStackimg} />
-            </Box>
-            <Box
-              css={{
-                position: "absolute",
-                left: "50%",
-                top: "50%",
-                transform: "translate(-50%, -50%)",
-              }}
-            >
-              <Flex direction="column" align="center">
-                <h2
-                  style={{
-                    fontSize: "40px",
-                    color: "white",
-                    fontFamily: `Inconsolata, monospace, Open Sans, sans-serif`,
-                    margin: 0,
-                  }}
-                >
-                  {i18next.t<string>("soon") === "soon"
-                    ? "Soon"
-                    : i18next.t<string>("soon")}
-                </h2>
-                <RiErrorWarningFill color="#ffcc00" fontSize={40} />
-              </Flex>
-            </Box>
-          </a>
+              <Card background={project.image} alt={project.alt} />
+            </a>
+          ))}
         </Grid>
       </Section>
       <footer>
