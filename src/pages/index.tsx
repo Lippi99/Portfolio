@@ -10,7 +10,7 @@ import me from "../assets/me.jpg";
 import { Grid } from "../components/Grid";
 import { Card } from "../components/Card";
 
-import projects from "../data.json";
+import { projects } from "../data";
 import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
 
 export const Home = () => {
