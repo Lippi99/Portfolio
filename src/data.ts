@@ -21,7 +21,7 @@ export const projects = [
     id: 3,
     image: space,
     href: "https://space-noil6w5fh-solomondeveloper.vercel.app/",
-    alt: "space application",
+    alt: "planets",
   },
 
   {
