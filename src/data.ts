@@ -1,5 +1,5 @@
 import crypto from "./assets/crypto.jpg";
-import fullStack from "./assets/fullStack.jpg";
+import fullStack from "./assets/ecommerce.jpg";
 import space from "./assets/space.jpg";
 import memorygame from "./assets/memorygame.jpg";
 import tictactoe from "./assets/tictactoe.jpg";
@@ -14,8 +14,8 @@ export const projects = [
   {
     id: 2,
     image: fullStack,
-    href: "https://lustrous-frangollo-76d2df.netlify.app/",
-    alt: "dashboard management",
+    href: "https://ecommerce-production-df02.up.railway.app/",
+    alt: "eCommerce",
   },
   {
     id: 3,

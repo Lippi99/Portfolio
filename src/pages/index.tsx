@@ -302,6 +302,8 @@ export const Home = () => {
           </Box>
           <Box
             css={{
+              width: "48%",
+              height: "28rem",
               textAlign: "center",
               overflow: "hidden",
               position: "relative",
@@ -313,6 +315,7 @@ export const Home = () => {
             <img
               style={{
                 width: "60%",
+                height: "100%",
                 objectFit: "cover",
                 borderRadius: "50%",
                 border: "5px solid rgb(139 233 253)",
