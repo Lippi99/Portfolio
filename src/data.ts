@@ -4,6 +4,7 @@ import americaNews from "./assets/americaNews.png";
 import space from "./assets/space.jpg";
 import memorygame from "./assets/memorygame.jpg";
 import tictactoe from "./assets/tictactoe.jpg";
+import dashboard from "./assets/dashboard.png";
 
 export const projects = [
   {
@@ -23,6 +24,12 @@ export const projects = [
     image: americaNews,
     href: "https://america-news.vercel.app/",
     alt: "America News",
+  },
+  {
+    id: 4,
+    image: dashboard,
+    href: "https://dashboard-production-ff51.up.railway.app/",
+    alt: "Dashboard",
   },
   {
     id: 5,
