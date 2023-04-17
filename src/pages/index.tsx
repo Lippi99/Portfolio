@@ -293,11 +293,22 @@ export const Home = () => {
               {i18next.t<string>("downloadResume") === "downloadResume"
                 ? "You can see my resume here:"
                 : i18next.t<string>("downloadResume")}
-              <Download>
-                <a href={require("../curriculum.pdf")} download="resume">
-                  Download
-                </a>
-              </Download>
+              {localStorage.getItem("lang") === "pt" ? (
+                <Download>
+                  <a
+                    href={require("../curriculum-pt-br.pdf")}
+                    download="resume"
+                  >
+                    Download
+                  </a>
+                </Download>
+              ) : (
+                <Download>
+                  <a href={require("../curriculum.pdf")} download="resume">
+                    Download
+                  </a>
+                </Download>
+              )}
             </p>
           </Box>
           <Box
