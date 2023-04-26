@@ -150,7 +150,7 @@ export const Home = () => {
           >
             <a
               target="_blank"
-              href="https://github.com/SolomonDeveloper"
+              href="https://github.com/Lippi99"
               rel="noreferrer"
             >
               <FaGithub fontSize={50} color="rgb(139, 233, 253)" />
